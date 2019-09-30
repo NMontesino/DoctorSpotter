@@ -1,1 +1,4 @@
-You created a new user
+<p>Hello <strong><%= @patient.first_name %></strong>! Welcome to Doctor Spotter.</p>
+<%= button_to "See Appointments => TODO", appointments_path() %>
+<%= button_to "Schedule an appointment => TODO", doctors_path() %>
+<%= button_to "Edit Account", edit_patient_path(@patient), :method => :get %>
