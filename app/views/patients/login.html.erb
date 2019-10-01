@@ -1,0 +1,12 @@
+<h1>Login page / sing up button</h1>
+
+
+<%= form_with(url: verification_pacient_path, method: "get") do %>
+  <%= label_tag("Email:") %>
+  <%= text_field_tag(:email) %>
+  <%= label_tag("Password:") %>
+  <%= text_field_tag(:email) %>
+  <%= submit_tag("Submit") %>
+<% end %>
+<br>
+<%= button_to "Sign up", new_patient_path, :method => :get %>

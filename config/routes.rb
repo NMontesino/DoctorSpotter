@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  root 'patients#login'
+
+  get 'patients/verification', to:'patients#verification', as: 'verification_pacient'
+
   resources :appointments
   resources :doctors
   resources :specialties

@@ -1,6 +1,17 @@
 class PatientsController < ApplicationController
   before_action :find_patient, only: [:show, :edit, :update]
 
+
+  def login
+
+    render :login
+  end
+
+  def verification
+
+  end
+
+
   def new
     @patient = Patient.new
   end
@@ -10,7 +21,7 @@ class PatientsController < ApplicationController
   def create
     if password_confirmation?
       @patient = Patient.create(set_patient_params)
-      validate_patient()
+      validate_patient_login()
     else
       flash[:errors] = ["Passwords don't match. Please, try it again"]
       redirect_to new_patient_path()
@@ -27,7 +38,12 @@ class PatientsController < ApplicationController
   end
 
   def update
-    @patiente = Patient.update(set_patient_params)
+    if password_confirmation?
+      @patiente = Patient.update(set_patient_params)
+    else
+      flash[:errors] = ["Passwords don't match. Please, try it again"]
+      redirect_to edit_insurance_path(@patient)
+    end
 
     redirect_to patient_path(@patient)
   end
@@ -49,7 +65,7 @@ class PatientsController < ApplicationController
     end
   end
 
-  def validate_patient
+  def validate_patient_login
     if @patient.valid?
       redirect_to patient_path(@patient)
     else
@@ -61,6 +77,13 @@ class PatientsController < ApplicationController
   def find_patient
     @patient = Patient.find(params[:id])
     return @patient
+  end
+
+  def validate_returning_patient
+    # if
+    #
+    # end
+
   end
 
 
