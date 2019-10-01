@@ -8,6 +8,6 @@ class Patient < ApplicationRecord
     validates :last_name, presence: true
     validates :email, presence: true, uniqueness: true
     validates :password_digest, presence: true
-    validates_length_of :password_digest, :in => 6..20, :on => :create
+    # validates_length_of :password_digest, :in => 6..20, :on => :create
 
 end

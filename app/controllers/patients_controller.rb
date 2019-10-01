@@ -8,6 +8,7 @@ class PatientsController < ApplicationController
   end
 
   def verification
+    validate_returning_patient
 
   end
 
@@ -80,9 +81,17 @@ class PatientsController < ApplicationController
   end
 
   def validate_returning_patient
-    # if
-    #
-    # end
+    byebug
+    if @patient = Patient.find_by(email: params[:email], password_digest: params[:password]) != nil
+      redirect_to patient_path(@patient)
+    else
+      flash[:errors] = ["Email or passsword invalid. Please, try it again"]
+      puts "false"
+      redirect_to '/'
+    end
+
+
+
 
   end
 

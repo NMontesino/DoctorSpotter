@@ -1,11 +1,19 @@
-<h1>Login page / sing up button</h1>
+<h1>Login page / sign up button</h1>
+<br>
 
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error|  %>
+    <h1 style='color:red'><%= error %></h1>
+    <% end %>
+<% end %>
 
 <%= form_with(url: verification_pacient_path, method: "get") do %>
   <%= label_tag("Email:") %>
   <%= text_field_tag(:email) %>
+<br>
   <%= label_tag("Password:") %>
-  <%= text_field_tag(:email) %>
+  <%= text_field_tag(:password) %>
+<br>
   <%= submit_tag("Submit") %>
 <% end %>
 <br>
