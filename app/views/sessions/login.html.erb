@@ -2,12 +2,13 @@
 <br>
 
 <% if flash[:errors] %>
-  <% flash[:errors].each do |error|  %>
-    <h1 style='color:red'><%= error %></h1>
-    <% end %>
+  <% flash[:errors].each do |error| %>
+    <p style='color:red'><%= error %></p>
+  <% end %>
 <% end %>
 
-<%= form_with(url: verification_pacient_path, method: "get") do %>
+
+<%= form_tag(verified_path) do %>
   <%= label_tag("Email:") %>
   <%= text_field_tag(:email) %>
 <br>
@@ -18,3 +19,4 @@
 <% end %>
 <br>
 <%= button_to "Sign up", new_patient_path, :method => :get %>
+<br>
