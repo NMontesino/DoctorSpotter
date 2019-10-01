@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get "/login", to: 'sessions#login', as: "login"
   post '/login', to:'sessions#verification', as: "verified"
+  get '/logout', to: 'sessions#logout', as: 'logout'
 
   resources :appointments
   resources :doctors
