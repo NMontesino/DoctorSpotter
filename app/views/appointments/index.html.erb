@@ -1,4 +1,4 @@
-<% button_to "Home Page", patient_path(@current_patient), :method => :get %>
+<%= button_to "Home Page", patient_path(@current_patient), :method => :get %>
 <h1>Your Appointments' index page</h1>
 <ul>
   <% @appointments.each do |appointment| %>

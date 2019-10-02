@@ -4,14 +4,12 @@ class ApplicationController < ActionController::Base
 
     private
 
-    def current_patient 
+    def current_patient
         @current_patient = Patient.find_by(id: session[:patient_id])
     end
 
     def logged_in?
-
         !current_patient.nil?
-
     end
 
     def authenticated

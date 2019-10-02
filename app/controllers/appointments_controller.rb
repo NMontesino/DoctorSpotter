@@ -12,7 +12,6 @@ class AppointmentsController < ApplicationController
   def create
 
     @appointment = Appointment.create(set_params)
-    byebug
     if @appointment.valid?
       redirect_to patient_path(@current_patient)
     else
