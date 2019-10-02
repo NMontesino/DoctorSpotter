@@ -4,4 +4,4 @@
 <p><strong>Specialty:</strong> <%= @doctor.specialty.name %></p>
 <p><strong>Fee per visit:</strong> $<%= @doctor.fee %>.00.</p>
 <br>
-<%= button_to "Schedule an Appointment", new_appointment_path(@doctor), :method => :get %>
+<%= button_to "Schedule an Appointment", new_doctor_appointment_path(@doctor), :method => :get %>

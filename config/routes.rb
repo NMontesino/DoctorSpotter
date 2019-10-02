@@ -9,8 +9,13 @@ Rails.application.routes.draw do
   post '/doctors', to: 'doctors#index'
 
 
-  resources :appointments
-  resources :doctors, only: [:show]
+
+  resources :doctors, only: [:show] do
+    # get '/appointments/new', to: 'appointments#new', as: "new_doctor_appointment_path"
+    resources :appointments, only: [:new]
+  end
+
+  resources :appointments, except: [:new]
   resources :specialties
   resources :insurances
   resources :patients

@@ -3,9 +3,10 @@
   <%= f.label :date %>
   <%= f.date_field :date %>
   <%= f.label :condition %>
-  <%= f.text_field :condition %>
-  <%= f.hidden_field : %>
-  <%= f.hidden_field : %>
+  <%= f.text_area :condition %>
+  <%= f.hidden_field :doctor_id %>
+  <%= f.hidden_field :patient_id %>
   <%= f.submit %>
+
 
 <% end %>

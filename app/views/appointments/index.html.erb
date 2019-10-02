@@ -1,0 +1,10 @@
+<% button_to "Home Page", patient_path(@current_patient), :method => :get %>
+<h1>Your Appointments' index page</h1>
+<ul>
+  <% @appointments.each do |appointment| %>
+    <li><%= appointment.doctor.name %></li>
+    <li><%= appointment.date %></li>
+    <li><%= appointment.condition %></li>
+    <br>
+  <% end %>
+</ul>

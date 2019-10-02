@@ -1,6 +1,6 @@
 <p>Hello <strong><%= @current_patient.first_name %></strong>! Welcome to Doctor Spotter.</p>
-<%= button_to "See Appointments => TODO", appointments_path() %>
-<%= button_to "Schedule an appointment => TODO", doctors_path() %>
+<%= button_to "See Appointments", appointments_path(), :method => :get %>
+<%= button_to "Schedule an appointment", search_path(), :method => :get %>
 <%= button_to "Edit Account", edit_patient_path(@current_patient), :method => :get %>
 <%= button_to "Delete Account", patient_path(@current_patient), :method => :delete, data: { confirm: 'Are You Sure You Want To Delete Your Account?' } %>
 <%= button_to "Logout", logout_path, :method => :get %>
