@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :doctors, only: [:show] do
     # get '/appointments/new', to: 'appointments#new', as: "new_doctor_appointment_path"
     resources :appointments, only: [:new]
+    
   end
 
   resources :appointments, except: [:new]
