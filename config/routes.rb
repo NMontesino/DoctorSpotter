@@ -4,8 +4,11 @@ Rails.application.routes.draw do
   post '/login', to:'sessions#verification', as: "verified"
   get '/logout', to: 'sessions#logout', as: 'logout'
 
+  get '/doctors', to: 'doctors#new'
+  post '/doctors', to: 'doctors#show'
+
   resources :appointments
-  resources :doctors
+  # resources :doctors
   resources :specialties
   resources :insurances
   resources :patients

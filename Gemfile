@@ -10,6 +10,8 @@ gem 'rails', '~> 6.0.0'
 # gem 'sqlite3', '~> 1.4'
 gem 'pg'
 
+gem 'rest-client'
+
 gem 'tailwindcss', '~> 1.0.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
