@@ -1,0 +1,8 @@
+<h1>Doctors' List</h1>
+
+<% @doctors.each do |doctor| %>
+  <ul>
+    <li><img src="<%= doctor.image_url %>" alt="Dr's <%= doctor.name %> picture"></li>
+    <li><%= link_to doctor.name, doctor_path(doctor) %></li>
+  </ul>
+<% end %>

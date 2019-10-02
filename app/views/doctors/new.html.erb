@@ -1,10 +1,10 @@
 <h1>Welcome to the your query API!</h1>
 <h3>Please enter a request by Speacilty</h3>
-<%= form_tag("/search", method: "post") do %>
+<%= form_tag("/doctors", method: "post") do %>
   <%= label_tag(:specialty) %>
-  <%= collection_select(:specialty, :specialty_id, Specialty.all, :id, :name, prompt: true) %><br>
+  <%= collection_select(:doctor, :specialty_id, Specialty.all, :id, :name, prompt: true) %><br>
   <%= label_tag(:Insurance) %>
-  <%= collection_select(:insurance, :insurance_id, Insurance.all, :id, :name, prompt: true) %>
+  <%= collection_select(:doctor, :insurance_id, Insurance.all, :id, :name, prompt: true) %>
 <br>
   <%= submit_tag("Search") %>
 <% end %>

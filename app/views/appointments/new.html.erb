@@ -1,0 +1,11 @@
+<h1>Make a appointment</h1>
+<%= form_for @appointment do |f| %>
+  <%= f.label :date %>
+  <%= f.date_field :date %>
+  <%= f.label :condition %>
+  <%= f.text_field :condition %>
+  <%= f.hidden_field : %>
+  <%= f.hidden_field : %>
+  <%= f.submit %>
+
+<% end %>
