@@ -12,6 +12,8 @@ gem 'pg'
 
 gem 'rest-client'
 
+gem 'activerecord-reset-pk-sequence', '~> 0.2.0'
+
 gem 'tailwindcss', '~> 1.0.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
