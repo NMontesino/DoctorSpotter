@@ -1,10 +1,17 @@
-<%= button_to "Home Page", patient_path(@current_patient), :method => :get %>
-<h1>Your Appointments' index page</h1>
-<ul>
-  <% @appointments.each do |appointment| %>
-    <li><%= appointment.doctor.name %></li>
-    <li><%= appointment.date %></li>
-    <li><%= appointment.condition %></li>
-    <br>
-  <% end %>
-</ul>
+<br>
+<div class="container">
+  <h4 style="font-family: 'Luckiest Guy', cursive; color: #007bff" >Appointments' <span style="color: #ff5b62;">Page</span></h4>
+
+    <% @appointments.each do |appointment| %>
+      <div class="card" style="width: 50rem;">
+        <div class="col-8 col-lg-8 col-md-2">
+          <br>
+          <p><strong>Date of your appointment: </strong><%= appointment.date.strftime("%a, %d %b %Y") %></p>
+          <p><strong>Doctor: </strong><%= appointment.doctor.name %></p>
+          <p><strong>Notes about your visit: </strong> <%= appointment.condition %></p>
+        </div>
+      </div>
+      <br>
+    <% end %>
+
+</div>

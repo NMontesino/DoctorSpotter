@@ -12,6 +12,10 @@ gem 'pg'
 
 gem 'rest-client'
 
+gem 'bootstrap', '~> 4.3.1'
+
+gem 'jquery-rails'
+
 gem 'activerecord-reset-pk-sequence', '~> 0.2.0'
 
 gem 'tailwindcss', '~> 1.0.0'

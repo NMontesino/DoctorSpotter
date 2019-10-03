@@ -1,39 +1,46 @@
-
-<% if flash[:errors] %>
-  <% flash[:errors].each do |error|  %>
-    <p style='color:red'><%= error %></p>
-    <% end %>
-<% end %>
-
-<%= form_for @patient, :html => {:class => "bg-white shadow-md rounded p-8 m-6 w-1/3"} do |f| %>
-
-  <div class="field">
-    <%= f.label :first_name, class: "block text-gray-700 text-sm font-bold mb-0" %>
+<div class="container">
+  <div class="text-center">
     <br>
-    <%= f.text_field :first_name, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-5" %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name, class: "block text-gray-700 text-sm font-bold mb-0" %>
-    <br>
-    <%= f.text_field :last_name, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-5" %>
-  </div>
-  <div class="field">
-    <%= f.label :email, class: "block text-gray-700 text-sm font-bold mb-0" %>
-    <br>
-    <%= f.text_field :email, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-5" %>
-  </div>
-  <div class="field">
-    <%= f.label :password, class: "block text-gray-700 text-sm font-bold mb-0" %>
-    <br>
-    <%= f.password_field :password, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-5" %>
-  </div>
-  <div class="field">
-  <%= f.label :password_confirmation, class: "block text-gray-700 text-sm font-bold mb-0" %>
-  <br>
-  <%= f.password_field :password_confirmation, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-5" %>
-  </div>
-  <%= f.submit %>
-<br>
-  <%= link_to "Already a user?", login_path %>
+    <h1 style="font-family: 'Luckiest Guy', cursive; color: #007bff" >Sign<span style="color: #ff5b62;"> Up</span></h1>
 
-<% end %>
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |error|  %>
+          <p style='color:red'><%= error %></p>
+          <% end %>
+      <% end %>
+
+    <div class="container">
+      <%= form_for @patient do |f| %>
+        <div class="form-group">
+          <%= f.text_field :first_name, placeholder: "First name", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-2" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.text_field :last_name, placeholder: "Last name", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-2" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.text_field :email, placeholder: "Email", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-2" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.password_field :password, placeholder: "Password", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-2" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.password_field :password_confirmation, placeholder: "Confirmation", class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-2" %>
+        </div>
+
+        <div class="form-group">
+          <%= submit_tag "Submit", class:"btn btn-primary" %>
+        </div>
+
+      <% end %>
+      <hr>
+      <div class="form-group">
+        <%= link_to "Already an User?", login_path %>
+      </div>
+
+    </div>
+  </div>
+</div>
