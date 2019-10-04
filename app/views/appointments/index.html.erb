@@ -1,17 +1,27 @@
 <br>
 <div class="container">
+
+  <% if @appointments.empty? %>
+    <div class="container">
+      <h5 style="font-family: 'Luckiest Guy', cursive; color: #007bff" >You have <span style="color: #ff5b62;">no appointments</span> yet. <br>Go back to your <span style="color: #ff5b62;">HOME PAGE</span> and start scheduling one.</h5>
+    </div>
+
+    <% else %>
   <h4 style="font-family: 'Luckiest Guy', cursive; color: #007bff" >Appointments' <span style="color: #ff5b62;">Page</span></h4>
 
     <% @appointments.each do |appointment| %>
       <div class="card" style="width: 50rem;">
-        <div class="col-8 col-lg-8 col-md-2">
+        <div class="col-12">
           <br>
           <p><strong>Date of your appointment: </strong><%= appointment.date.strftime("%a, %d %b %Y") %></p>
           <p><strong>Doctor: </strong><%= appointment.doctor.name %></p>
           <p><strong>Notes about your visit: </strong> <%= appointment.condition %></p>
+          <%= button_to "Delete", appointment_path(appointment), :method => :delete, class:"btn btn-danger" %> <%= button_to "Edit", edit_appointment_path(appointment), :method => :get, class:"btn btn-info" %>
+          <br>
+          <br>
         </div>
       </div>
-      <br>
-    <% end %>
 
+    <% end %>
+  <% end %>
 </div>

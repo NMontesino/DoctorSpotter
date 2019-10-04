@@ -18,6 +18,16 @@ class AppointmentsController < ApplicationController
       redirect_back fallback_location: search_path()
     end
 
+    def edit
+
+      byebug
+
+    end
+
+    def destroy
+      byebug
+    end
+
 
   end
 
