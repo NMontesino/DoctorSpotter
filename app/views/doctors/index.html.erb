@@ -2,7 +2,12 @@
 
 <div class="container">
   <br>
-  <h4 style="font-family: 'Luckiest Guy', cursive; color: #007bff" >Select a <span style="color: #ff5b62;"> Doctor</span></h4>
+  <% if @doctors.empty? %>
+  <div class="container">
+    <h5 style="font-family: 'Roboto Slab', serif; color: #007bff" >No doctors match your criteria.<span style="color: #ff5b62;"><br>Please</span>, go back to your <span style="color: #ff5b62;"><a style="color: #ff5b62;" href=<%= search_path() %>>SEARCH PAGE</a></span> and try it again.</h5>
+  </div>
+  <% else %>
+  <h4 style="font-family: 'Roboto Slab', serif; color: #007bff" >Select a <span style="color: #ff5b62;"> Doctor</span></h4>
     <div class="row">
         <div class="col-lg-12">
             <div class="main-box no-header clearfix">
@@ -36,4 +41,5 @@
             </div>
         </div>
     </div>
+    <% end %>
 </div>

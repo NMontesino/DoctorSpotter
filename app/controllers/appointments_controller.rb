@@ -4,6 +4,27 @@ class AppointmentsController < ApplicationController
     @appointments = @current_patient.appointments
   end
 
+  def show
+    @appointment = Appointment.find(params[:id])
+    @appointment.destroy
+    redirect_to appointments_path
+  end
+
+  def edit
+    @appointment = Appointment.find(params[:id])
+
+  end
+
+  def update
+    @appointment = Appointment.find(params[:id])
+    @appointment.update(set_params)
+    if @appointment.valid?
+      redirect_to appointments_path()
+    else
+      redirect_back fallback_location: search_path()
+    end
+
+  end
 
   def new
     @appointment = Appointment.new(doctor_id: params["doctor_id"], patient_id: @current_patient.id)
@@ -18,15 +39,6 @@ class AppointmentsController < ApplicationController
       redirect_back fallback_location: search_path()
     end
 
-    def edit
-
-      byebug
-
-    end
-
-    def destroy
-      byebug
-    end
 
 
   end
