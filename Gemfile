@@ -10,7 +10,11 @@ gem 'rails', '~> 6.0.0'
 # gem 'sqlite3', '~> 1.4'
 gem 'pg'
 
-gem 'rest-client'
+
+# bundle installing REST Client
+gem 'rest-client', '~> 2.1'
+
+
 
 gem 'bootstrap', '~> 4.3.1'
 
