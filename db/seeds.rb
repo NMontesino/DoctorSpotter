@@ -9,7 +9,7 @@
 #
 # ## Insurances feach from API
 # def insurances
-#   response = RestClient.get 'https://api.betterdoctor.com/2016-03-01/insurances?limit=10&user_key=3e4679b46d0072502aa1d79b922da235'
+#   response = RestClient.get 'https://api.betterdoctor.com/2016-03-01/insurances?limit=10&user_key='
 #   json = JSON.parse response
 #
 #   if !json.nil?
@@ -26,7 +26,7 @@
 #
 # #### Speciality feach from API
 # def specialties
-#   response = RestClient.get 'https://api.betterdoctor.com/2016-03-01/specialties?limit=10&user_key=3e4679b46d0072502aa1d79b922da235'
+#   response = RestClient.get 'https://api.betterdoctor.com/2016-03-01/specialties?limit=10&user_key='
 #   json = JSON.parse response
 #
 #   if !json.nil?
@@ -43,7 +43,7 @@
 
 #### Doctor request
 def doctors
-  response = RestClient.get 'https://api.betterdoctor.com/2016-03-01/doctors?location=37.773%2C-122.413%2C100&user_location=37.773%2C-122.413&skip=4&limit=100&user_key=3e4679b46d0072502aa1d79b922da235'
+  response = RestClient.get 'https://api.betterdoctor.com/2016-03-01/doctors?location=37.773%2C-122.413%2C100&user_location=37.773%2C-122.413&skip=4&limit=100&user_key='
   json = JSON.parse response
 
   if !json.nil?
